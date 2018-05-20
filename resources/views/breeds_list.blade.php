@@ -13,7 +13,7 @@
 		@foreach($cats_by_breed as $breed)
 			<tr>
 				<td>{{ $breed->id }}</td>
-				<td>{{ $breed->breed }}</td>
+				<td>{{ $breed->name }}</td>
 				<td>{{ $breed->cats_count }}</td>
 			</tr>
 		@endforeach
