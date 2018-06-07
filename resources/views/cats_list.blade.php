@@ -16,9 +16,9 @@
 			<tr>
 				<td>{{ $cat->id }}</td>
 				<td>{{ $cat->name }}</td>
-				<td>@if($cat->is_kitten) котёнок {{ $cat->age }} месяцев @else {{ $cat->years }} лет @endif</td>
-				<td>@if(isset($cat->house_id)) {{ $cat->house }} @else Бездомный @endif</td>
-				<td>@if(isset($cat->breed_id )) {{ $cat->breed }} }} @else Беспородный @endif</td>
+				<td>@if($cat->isKitten()) котёнок {{ $cat->age }} месяцев @else {{ $cat->years }} лет @endif</td>
+				<td>@if($cat->withoutHouse()) Бездомный @else {{ $cat->house->name }} @endif</td>
+				<td>@if($cat->withoutBreed()) Беспородный @else {{ $cat->breed->name }} @endif</td>
 			</tr>
 		@endforeach
 	</table>
